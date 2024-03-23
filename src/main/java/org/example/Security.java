@@ -1,7 +1,6 @@
 package org.example;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-import static java.lang.Math.sin;
 import static spark.Spark.*;
 
 public class Security {
@@ -9,19 +8,15 @@ public class Security {
 
         //API: secure(keystoreFilePath, keystorePassword, truststoreFilePath,truststorePassword);
         staticFiles.location("/public");
+        UsersDataBase.Inicializador();
+
         secure("certificados/ecikeystore.p12", "123456", null, null);
         port(getPort());
-        get("/formulario.html", (req, res) -> args );
 
-
-        get("sin", (req,res) -> {
-            try{
-                Double numero = Double.parseDouble(req.queryParams("numero"));
-                Double resultado = sin(numero);
-                return resultado;
-            } catch (NumberFormatException e) {
-                return null;
-            }
+        post("/login", (req,res) -> {
+            String usuario = req.queryParams("user");
+            String password = req.queryParams("password");
+            return UsersDataBase.validate(usuario, password);
         });
     }
 
