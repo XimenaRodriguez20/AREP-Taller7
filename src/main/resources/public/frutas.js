@@ -10,10 +10,10 @@ function loadMs() {
         html += "</ul>";
         document.getElementById("fuitslist").innerHTML = html;
     }
-    xhttp.open("GET", "https://localhost:4000/fruits");
+    xhttp.open("GET", "https://ec2-100-24-70-251.compute-1.amazonaws.com:4000/fruits");
     xhttp.send();
 }
 
 function redireccionar() {
-    window.location.href = "https://localhost:5000/formulario.html";
+    window.location.href = "https://ec2-204-236-255-199.compute-1.amazonaws.com:5000/formulario.html";
 }

@@ -8,10 +8,10 @@ function loadGetMsg() {
         } else {
             // Redirect to Google
             //document.documentElement.innerHTML = this.responseText;
-            window.location.href = "https://localhost:4000/frutas.html";
+            window.location.href = "https://ec2-100-24-70-251.compute-1.amazonaws.com:4000/frutas.html";
         }
 
     }
-    xhttp.open("POST", "https://localhost:5000/login?user=" + usuario + "&password=" + contrasena);
+    xhttp.open("POST", "https://ec2-204-236-255-199.compute-1.amazonaws.com:5000/login?user=" + usuario + "&password=" + contrasena);
     xhttp.send();
 }

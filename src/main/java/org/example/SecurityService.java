@@ -20,7 +20,7 @@ public class SecurityService {
 
             Boolean validacion = UsersDataBase.validate(usuario, password);
             System.out.println("boolean" + validacion);
-            return  (validacion) ? SecurityURLReader.conexionSegura("https://localhost:4000/frutas.html"):"Datos incorrectos";
+            return  (validacion) ? SecurityURLReader.conexionSegura("https://ec2-100-24-70-251.compute-1.amazonaws.com:4000/frutas.html"):"Datos incorrectos";
         });
 
 

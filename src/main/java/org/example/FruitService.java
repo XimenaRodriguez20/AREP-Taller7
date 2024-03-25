@@ -19,13 +19,7 @@ public class FruitService {
             return FruitsDataBase.getFrutasJSON();
         });
 
-
-
-
     }
-
-
-
 
     static int getPort() {
         if (System.getenv("PORT") != null) {
