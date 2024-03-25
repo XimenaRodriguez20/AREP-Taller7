@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frutas</title>
+    <script src="frutas.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #33ccff, #66ff99, #ff99cc);
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="loadMs()">
+<h1>Las mejores frutas</h1>
+<input type=button value=enviar onclick=redireccionar()>
+<div id=fuitslist></div>
+</body>
+</html>

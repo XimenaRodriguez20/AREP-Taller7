@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class UsersDataBase {
 
-    public static HashMap<String, String> users = new HashMap<>();
+    public static final HashMap<String, String> users = new HashMap<>();
 
     public static void Inicializador(){
         users.put("user1", hashPassword("password1"));
@@ -27,11 +27,17 @@ public class UsersDataBase {
         }
     }
 
-    public static String validate(String usuario, String contrasena){
-        if (users.containsValue(hashPassword(contrasena)) && users.containsKey(usuario)) {
-            return "valido";
+    public static Boolean validate(String usuario, String contrasena){
+        System.out.println(users.get(usuario));
+        System.out.println(hashPassword(contrasena));
+        if (users.containsKey(usuario)) {
+            if (users.get(usuario).equals(hashPassword(contrasena))) {
+                return true;
+            } else {
+                return false;
+            }
         }
-        return "hola";
+        return false;
 
     }
 }

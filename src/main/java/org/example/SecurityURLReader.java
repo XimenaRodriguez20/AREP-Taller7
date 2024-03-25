@@ -20,7 +20,7 @@ import javax.net.ssl.TrustManagerFactory;
 
 public class SecurityURLReader {
 
-    public static void main(String[] args) {
+    public static String conexionSegura(String url) {
         try {
 
             // Create a file and a password representation
@@ -49,9 +49,6 @@ public class SecurityURLReader {
             sslContext.init(null, tmf.getTrustManagers(), null);
             SSLContext.setDefault(sslContext);
 
-            // We can now read this URL
-            readURL("https://localhost:5000/formualrio.html");
-
             // This one can't be read because the Java default truststore has been
             // changed.
             readURL("https://www.google.com");
@@ -70,9 +67,12 @@ public class SecurityURLReader {
             Logger.getLogger(SecurityURLReader.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        return readURL(url);
+
     }
 
-    public static void readURL(String sitetoread) {
+    public static String readURL(String sitetoread) {
+        String result = "";
         try {
             // Crea el objeto que representa una URL2
             URL siteURL = new URL(sitetoread);
@@ -104,9 +104,11 @@ public class SecurityURLReader {
             String inputLine = null;
             while ((inputLine = reader.readLine()) != null) {
                 System.out.println(inputLine);
+                result += inputLine;
             }
         } catch (IOException x) {
             System.err.println(x);
         }
+        return result;
     }
 }
