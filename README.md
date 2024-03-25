@@ -121,7 +121,7 @@ Si se busca implementar un servicio adicional, se puede aprovechar la arquitectu
 
 ## Prueba y despliegue con AWS
 
-* [Despligue](https://youtu.be/XrMbX1HyBYA)
+* [Despliegue](https://youtu.be/XrMbX1HyBYA)
 
 ## Autor
 
