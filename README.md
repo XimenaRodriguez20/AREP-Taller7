@@ -24,17 +24,13 @@ En este proyecto se aprendera y aplicara el tema de conexiones seguras entre dif
 
 Para este proyecto utilizaremos la siguiente arquitectura:
 
-
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/adddb40a-0be3-4c28-8caf-cac5eaa493b1)
 
 ### SecurityService
-Es la clase la cual expone un servicio que corre por el puerto 5000 y da acceso a archivos estaticos y tambien un
-endpoint el cual al comunicarse con la base de datos de los usuarios (UsersDataBase) valida los datos, para asi,
-redirigirlo al vervicio de frutas
+Es la clase la cual expone un servicio que corre por el puerto 5000 y da acceso a archivos estaticos y tambien un endpoint el cual al comunicarse con la base de datos de los usuarios (UsersDataBase) valida los datos, para asi, redirigirlo al servicio de frutas.
 
 ### FruitService
-Es la clase que expone el segundo servicio de este programa que corre por el puerto 4000, el cual responde con los
-datos que se almacenan en la base de datos de las frutas (FruitsDataBase) y las presenta en una pagina web con
-estilo css
+Es la clase que expone el segundo servicio de este programa que corre por el puerto 4000, el cual responde con los datos que se almacenan en la base de datos de las frutas (FruitsDataBase) y las presenta en una pagina web con estilo css.
 
 ## Diseño
 
@@ -69,13 +65,13 @@ estilo css
     - Para correr el servicio SecurityService:
 
         ~~~
-            java -cp "target/classes:target/dependency/*" org.example.SecurityService
+            java -cp "target/classes;target/dependency/*" org.example.SecurityService
         ~~~
       
     - Para correr el servicio FruitService:
   
         ~~~
-            java -cp "target/classes:target/dependency/*" org.example.FruitService
+            java -cp "target/classes;target/dependency/*" org.example.FruitService
         ~~~
 
 * Si desea correr desde el cmd haga los pasos mencionados anteriormente, pero antes de eso recuerde ubicarse en la carpeta del proyecto:
@@ -84,17 +80,24 @@ estilo css
         cd AREP-Taller6/
     ~~~
 
-* Para correr con ayude del IDE ingrese a la clase de SecurityService, FruitService y ponga a correr como se muestra a continuaciòn:
+* Para correr con ayude del IDE ingrese a la clase de SecurityService, FruitService y ponga a correr como se muestra a continuación:
+
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/bb4fd9e8-f84d-4e11-a3f1-e87b03a619c1)
+
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/d99d0aab-8e67-4b2b-ad86-cb4c60ca1739)
+
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/015ffbf5-a18c-4eb6-a445-b6f72e4de7bc)
 
 
 ## Pruebas de Manera Local
 
 * Después de clonado el repositorio escribimos los comandos mencionados anteriormente para arrancar el proyecto o utilizamos el IDE:
 
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/8b4c54f4-ffc6-403d-bb44-98ef877e81a7)
 
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/3df94b5b-ca41-4e40-9e03-7173b3b90d9a)
 
-
-
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/6ba58249-2d8e-4594-b788-6423c815fcd6)
 
 * Para evidenciar que está funcionando el proyecto, ingresamos a la siguiente url:
 
@@ -102,13 +105,23 @@ estilo css
         http://localhost:5000/formulario.html
     ~~~
 
+Se vera de esta forma:
+
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/eb4dff13-63b6-4b6c-9c3c-338a90a85ade)
+
 * Ingresamos datos erroneos y certeros para comprobar la validación del usuario, además evidenciamos que si el usuario se logea de manera correcta, nos mostrara otra pagina con unos datos de frutas, todo esto lo evidenciaremos a continuación:
 
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/fea5c95a-9d3a-4198-9505-22c9c8ba6cbf)
 
+![image](https://github.com/XimenaRodriguez20/AREP-Taller7/assets/123812926/3d7f1493-dd8a-46e1-9197-32759474ae14)
+
+## Escalamiento de Arquitectura
+
+Si se busca implementar un servicio adicional, se puede aprovechar la arquitectura existente de los servicios WebService y LoginService, adaptando el puerto y la lógica específica del nuevo servicio. Para la comunicación con estos nuevos servicios, se propone emplear SecureUrlReader, ya que asegura la integridad y confidencialidad de la comunicación.
 
 ## Prueba y despliegue con AWS
 
-* [Dspligue](https://youtu.be/XrMbX1HyBYA)
+* [Despligue](https://youtu.be/XrMbX1HyBYA)
 
 ## Autor
 
